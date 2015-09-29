@@ -1,2 +1,3 @@
 # docker-drupal-env
 Docker image for a drupal development environment with nginx, drush, php5, make ...
+Pushes rebuild the image on docker hub automatically
