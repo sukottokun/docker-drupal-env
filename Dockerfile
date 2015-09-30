@@ -18,15 +18,15 @@ RUN apt-get update && apt-get install -y \
 	nginx
 
 RUN php5enmod mcrypt
-RUN echo "xdebug.remote_enable=1" >> /etc/php5/mods-available/xdebug.ini \
-	&& echo "xdebug.max_nesting_level=256" >> /etc/php5/mods-available/xdebug.ini
-
+RUN echo "xdebug.remote_enable=1" >> /etc/php5/mods-available/xdebug.ini
+RUN echo "xdebug.max_nesting_level=256" >> /etc/php5/mods-available/xdebug.ini
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 RUN curl -sS https://phar.phpunit.de/phpunit.phar
-RUN chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit
+RUN chmod +x phpunit.phar
+RUN mv phpunit.phar /usr/local/bin/phpunit
 
 ENV PATH $PATH:/root/.composer/vendor/bin
 RUN composer global require drush/drush:dev-master && composer global update
