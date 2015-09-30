@@ -24,7 +24,7 @@ RUN echo "xdebug.max_nesting_level=256" >> /etc/php5/mods-available/xdebug.ini
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN curl -sS https://phar.phpunit.de/phpunit.phar
+RUN curl -sS https://phar.phpunit.de/phpunit.phar > phpunit.phar
 RUN chmod +x phpunit.phar
 RUN mv phpunit.phar /usr/local/bin/phpunit
 
