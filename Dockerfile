@@ -26,7 +26,7 @@ ENV PATH $PATH:/root/.composer/vendor/bin
 
 # Setup phpunit
 RUN curl -sS https://phar.phpunit.de/phpunit.phar > phpunit.phar \
-	&& chmod +x phpunit.phar
+	&& chmod +x phpunit.phar \
 	&& mv phpunit.phar /usr/local/bin/phpunit
 
 # Setup drush (dev-master for Drupal 8)
