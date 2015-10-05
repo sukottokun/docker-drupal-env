@@ -35,6 +35,4 @@ RUN composer global require drush/drush:dev-master && composer global update
 # Fix for Drupal
 RUN echo "xdebug.max_nesting_level=256" >> /etc/php5/cli/conf.d/20-xdebug.ini
 
-ADD code /code
-
 EXPOSE 80
