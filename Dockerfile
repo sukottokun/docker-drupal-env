@@ -30,7 +30,7 @@ RUN curl -sS https://phar.phpunit.de/phpunit.phar > phpunit.phar \
 	&& mv phpunit.phar /usr/local/bin/phpunit
 
 # Setup drush (dev-master for Drupal 8)
-RUN composer global require drush/drush:dev-master && composer global update
+RUN composer global require drush/drush:~8 && composer global update
 
 # Fix for Drupal
 RUN echo "xdebug.max_nesting_level=256" >> /etc/php5/cli/conf.d/20-xdebug.ini
